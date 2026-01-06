@@ -1,0 +1,73 @@
+# Enterprise RAG Ingestion Pipeline - Requirements
+# ================================================
+
+# Core Framework
+fastapi>=0.109.0
+uvicorn[standard]>=0.27.0
+pydantic>=2.5.0
+pydantic-settings>=2.1.0
+
+# Database
+sqlalchemy[asyncio]>=2.0.25
+asyncpg>=0.29.0  # Async PostgreSQL driver
+psycopg2-binary>=2.9.9  # Sync PostgreSQL driver (for migrations)
+alembic>=1.13.0  # Database migrations
+
+# Redis
+redis>=5.0.0
+aioredis>=2.0.1
+
+# AWS/S3
+boto3>=1.34.0
+aioboto3>=12.0.0
+
+# Task Queue
+celery[redis]>=5.3.0
+flower>=2.0.0  # Celery monitoring
+
+# Vector Databases
+qdrant-client>=1.7.0
+# pinecone-client>=2.2.0  # Uncomment if using Pinecone
+# weaviate-client>=4.0.0  # Uncomment if using Weaviate
+
+# Document Processing
+python-magic>=0.4.27  # MIME type detection
+python-multipart>=0.0.6  # File uploads
+
+# Layout Parsing (choose one or both)
+docling>=0.1.0  # IBM Docling for PDF parsing
+unstructured>=0.12.0  # Unstructured.io (alternative)
+beautifulsoup4>=4.12.0  # HTML parsing
+
+# OCR and Vision
+pytesseract>=0.3.10
+Pillow>=10.2.0
+
+# Embeddings
+openai>=1.10.0
+tiktoken>=0.5.0  # Token counting
+
+# Utilities
+httpx>=0.26.0
+tenacity>=8.2.0  # Retry logic
+structlog>=24.1.0  # Structured logging
+python-json-logger>=2.0.7
+
+# Observability
+prometheus-client>=0.19.0
+opentelemetry-api>=1.22.0
+opentelemetry-sdk>=1.22.0
+opentelemetry-instrumentation-fastapi>=0.43b0
+
+# Testing
+pytest>=7.4.0
+pytest-asyncio>=0.23.0
+pytest-cov>=4.1.0
+httpx>=0.26.0  # For TestClient
+factory-boy>=3.3.0
+
+# Development
+black>=24.1.0
+ruff>=0.1.14
+mypy>=1.8.0
+pre-commit>=3.6.0
